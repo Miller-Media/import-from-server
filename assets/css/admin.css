@@ -1,0 +1,249 @@
+/* Import from Server - Admin Styles */
+
+/* Breadcrumbs */
+.ifs-breadcrumbs {
+	margin: 12px 0;
+	padding: 8px 12px;
+	background: #f0f0f1;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	font-size: 13px;
+}
+
+.ifs-breadcrumbs a {
+	text-decoration: none;
+	color: #2271b1;
+}
+
+.ifs-breadcrumbs a:hover {
+	color: #135e96;
+	text-decoration: underline;
+}
+
+.ifs-breadcrumbs .ifs-breadcrumb-separator {
+	margin: 0 4px;
+	color: #8c8f94;
+}
+
+.ifs-breadcrumbs .ifs-breadcrumb-current {
+	font-weight: 600;
+	color: #1d2327;
+}
+
+/* Toolbar */
+.ifs-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0;
+	padding: 8px 12px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.ifs-select-all-label {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+/* File list */
+.ifs-file-list {
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.ifs-file-list .ifs-loading {
+	padding: 20px;
+	text-align: center;
+	color: #8c8f94;
+}
+
+.ifs-file-list .ifs-empty {
+	padding: 20px;
+	text-align: center;
+	color: #8c8f94;
+}
+
+.ifs-file-list .ifs-error {
+	padding: 20px;
+	text-align: center;
+	color: #d63638;
+}
+
+/* File list table */
+.ifs-file-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.ifs-file-table th {
+	text-align: left;
+	padding: 8px 12px;
+	background: #f0f0f1;
+	border-bottom: 1px solid #c3c4c7;
+	font-size: 13px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.ifs-file-table th:first-child {
+	width: 30px;
+}
+
+.ifs-file-table td {
+	padding: 6px 12px;
+	border-bottom: 1px solid #f0f0f1;
+	font-size: 13px;
+	vertical-align: middle;
+}
+
+.ifs-file-table tr:last-child td {
+	border-bottom: none;
+}
+
+.ifs-file-table tr:hover {
+	background: #f6f7f7;
+}
+
+.ifs-file-table tr.ifs-row-imported {
+	opacity: 0.5;
+}
+
+.ifs-file-table tr.ifs-row-imported td {
+	color: #8c8f94;
+}
+
+/* Directory row */
+.ifs-dir-link {
+	text-decoration: none;
+	color: #2271b1;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.ifs-dir-link:hover {
+	color: #135e96;
+	text-decoration: underline;
+}
+
+.ifs-dir-link .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+	margin-right: 4px;
+	color: #f0c33c;
+}
+
+/* File icon */
+.ifs-file-icon .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+	margin-right: 4px;
+	color: #8c8f94;
+}
+
+/* Status badges */
+.ifs-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+.ifs-badge-imported {
+	background: #f0f0f1;
+	color: #8c8f94;
+}
+
+.ifs-badge-not-importable {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+/* File size column */
+.ifs-col-size {
+	white-space: nowrap;
+	color: #8c8f94;
+}
+
+/* Date column */
+.ifs-col-date {
+	white-space: nowrap;
+	color: #8c8f94;
+}
+
+/* Type column */
+.ifs-col-type {
+	white-space: nowrap;
+	color: #8c8f94;
+}
+
+/* Progress section */
+.ifs-progress {
+	margin: 16px 0;
+	padding: 16px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.ifs-progress-bar-wrap {
+	width: 100%;
+	height: 20px;
+	background: #f0f0f1;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+.ifs-progress-bar {
+	height: 100%;
+	background: #2271b1;
+	border-radius: 10px;
+	transition: width 0.3s ease;
+}
+
+.ifs-progress-text {
+	font-size: 13px;
+	color: #1d2327;
+	margin-bottom: 12px;
+	font-weight: 500;
+}
+
+/* Import log */
+.ifs-import-log {
+	max-height: 200px;
+	overflow-y: auto;
+	font-size: 12px;
+	font-family: monospace;
+	background: #f6f7f7;
+	padding: 8px 12px;
+	border-radius: 4px;
+}
+
+.ifs-import-log .ifs-log-entry {
+	padding: 2px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.ifs-import-log .ifs-log-entry:last-child {
+	border-bottom: none;
+}
+
+.ifs-log-success {
+	color: #00a32a;
+}
+
+.ifs-log-error {
+	color: #d63638;
+}
