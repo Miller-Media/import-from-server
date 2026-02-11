@@ -117,10 +117,6 @@
 	background: #f6f7f7;
 }
 
-.ifs-file-table tr.ifs-row-imported {
-	opacity: 0.5;
-}
-
 .ifs-file-table tr.ifs-row-imported td {
 	color: #8c8f94;
 }
