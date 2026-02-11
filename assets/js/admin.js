@@ -81,10 +81,11 @@
 			if (i > 0) {
 				html += '<span class="ifs-breadcrumb-separator">/</span>';
 			}
+			var icon = (i === 0) ? '<span class="dashicons dashicons-admin-home"></span> ' : '';
 			if (i === breadcrumbs.length - 1) {
-				html += '<span class="ifs-breadcrumb-current">' + escHtml(breadcrumbs[i].label) + '</span>';
+				html += '<span class="ifs-breadcrumb-current">' + icon + escHtml(breadcrumbs[i].label) + '</span>';
 			} else {
-				html += '<a href="#" class="ifs-breadcrumb-link" data-path="' + escAttr(breadcrumbs[i].path) + '">' + escHtml(breadcrumbs[i].label) + '</a>';
+				html += '<a href="#" class="ifs-breadcrumb-link" data-path="' + escAttr(breadcrumbs[i].path) + '">' + icon + escHtml(breadcrumbs[i].label) + '</a>';
 			}
 		}
 		$('#ifs-breadcrumbs').html(html);

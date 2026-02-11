@@ -159,7 +159,7 @@ class IFS_REST_API {
 	private static function buildBreadcrumbs( $current_path, $root_path ) {
 		$breadcrumbs = array(
 			array(
-				'label' => basename( $root_path ),
+				'label' => __( 'Root', 'import-from-server' ),
 				'path'  => $root_path,
 			),
 		);
