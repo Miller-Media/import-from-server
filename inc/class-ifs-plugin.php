@@ -104,15 +104,15 @@ class IFS_Plugin {
 						<?php esc_html_e( 'Import Selected', 'import-from-server' ); ?> (<span id="ifs-selected-count">0</span>)
 					</button>
 				</div>
-				<div id="ifs-file-list" class="ifs-file-list">
-					<p class="ifs-loading"><?php esc_html_e( 'Loading...', 'import-from-server' ); ?></p>
-				</div>
 				<div id="ifs-progress" class="ifs-progress" style="display:none;">
 					<div class="ifs-progress-bar-wrap">
 						<div id="ifs-progress-bar" class="ifs-progress-bar" style="width:0%"></div>
 					</div>
 					<div id="ifs-progress-text" class="ifs-progress-text"></div>
 					<div id="ifs-import-log" class="ifs-import-log"></div>
+				</div>
+				<div id="ifs-file-list" class="ifs-file-list">
+					<p class="ifs-loading"><?php esc_html_e( 'Loading...', 'import-from-server' ); ?></p>
 				</div>
 			</div>
 		</div>
