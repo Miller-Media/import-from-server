@@ -1,5 +1,5 @@
 === Import from Server ===
-Contributors: jeremymiller
+Contributors: MillerMediaNow
 Tags: media, import, server, upload, files
 Requires at least: 6.0
 Tested up to: 6.9
