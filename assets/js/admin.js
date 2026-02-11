@@ -42,13 +42,19 @@
 
 	/**
 	 * Browse a directory via REST API.
+	 *
+	 * @param {string}  path   Directory path.
+	 * @param {boolean} silent If true, skip the loading indicator (used after import).
 	 */
-	function browse(path) {
+	function browse(path, silent) {
 		state.currentPath = path;
 		state.selectedFiles = [];
 		updateSelectedCount();
 
-		$('#ifs-file-list').html('<p class="ifs-loading">' + ifsData.i18n.loading + '</p>');
+		if (!silent) {
+			$('#ifs-file-list').html('<p class="ifs-loading">' + ifsData.i18n.loading + '</p>');
+			$('#ifs-progress').hide();
+		}
 		$('#ifs-select-all').prop('checked', false);
 
 		wp.apiRequest({
@@ -198,8 +204,9 @@
 			state.importing = false;
 			$('#ifs-import-btn').text(ifsData.i18n.importSelected + ' (0)');
 
-			// Refresh the file list to show updated "imported" status.
-			browse(state.currentPath);
+			// Refresh the file list silently so imported files show updated status,
+			// but keep the progress log visible so the user can review results.
+			browse(state.currentPath, true);
 
 		}).fail(function (xhr) {
 			var msg = xhr.responseJSON && xhr.responseJSON.message
