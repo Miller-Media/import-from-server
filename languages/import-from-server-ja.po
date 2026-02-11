@@ -1,0 +1,220 @@
+# Japanese translation for Import from Server plugin.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Import from Server 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/import-from-server\n"
+"Last-Translator: Miller Media\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-11T08:44:31+00:00\n"
+"PO-Revision-Date: 2026-02-11\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: import-from-server\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Plugin Name of the plugin
+#: import-from-server.php
+#: inc/class-ifs-plugin.php:27
+#: inc/class-ifs-plugin.php:28
+#: inc/class-ifs-plugin.php:96
+#: inc/class-ifs-settings.php:21
+msgid "Import from Server"
+msgstr "サーバーからインポート"
+
+#. Description of the plugin
+#: import-from-server.php
+msgid "Browse files on the server and import them into the WordPress Media Library."
+msgstr "サーバー上のファイルを参照し、WordPressメディアライブラリにインポートします。"
+
+#. Author of the plugin
+#: import-from-server.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: import-from-server.php
+msgid "https://www.millermedia.io"
+msgstr "https://www.millermedia.io"
+
+#: import-from-server.php:65
+msgid "Import Files"
+msgstr "ファイルをインポート"
+
+#: import-from-server.php:67
+msgid "Settings"
+msgstr "設定"
+
+#: inc/class-ifs-file-browser.php:21
+msgid "The configured root path does not exist."
+msgstr "設定されたルートパスが存在しません。"
+
+#: inc/class-ifs-file-browser.php:26
+msgid "The requested path does not exist."
+msgstr "リクエストされたパスが存在しません。"
+
+#: inc/class-ifs-file-browser.php:31
+msgid "Access denied: path is outside the allowed root directory."
+msgstr "アクセスが拒否されました：パスが許可されたルートディレクトリの外にあります。"
+
+#: inc/class-ifs-file-browser.php:45
+msgid "The requested path is not a directory."
+msgstr "リクエストされたパスはディレクトリではありません。"
+
+#: inc/class-ifs-file-browser.php:49
+msgid "The directory is not readable."
+msgstr "ディレクトリを読み取ることができません。"
+
+#: inc/class-ifs-file-browser.php:57
+msgid "Failed to read directory contents."
+msgstr "ディレクトリの内容の読み取りに失敗しました。"
+
+#: inc/class-ifs-importer.php:21
+msgid "The path is not a file."
+msgstr "パスがファイルではありません。"
+
+#: inc/class-ifs-importer.php:25
+msgid "The file is not readable."
+msgstr "ファイルを読み取ることができません。"
+
+#: inc/class-ifs-importer.php:31
+msgid "This file type is not allowed."
+msgstr "このファイルタイプは許可されていません。"
+
+#: inc/class-ifs-importer.php:36
+msgid "This file type is not in the allowed types list."
+msgstr "このファイルタイプは許可されたタイプの一覧に含まれていません。"
+
+#: inc/class-ifs-importer.php:41
+msgid "This file has already been imported."
+msgstr "このファイルは既にインポート済みです。"
+
+#. translators: %s: uploads directory path
+#: inc/class-ifs-importer.php:65
+#, php-format
+msgid "Could not create uploads directory: %s"
+msgstr "アップロードディレクトリを作成できませんでした：%s"
+
+#. translators: 1: copy or move, 2: destination path
+#: inc/class-ifs-importer.php:84
+#, php-format
+msgid "Failed to %1$s file. Check that the uploads directory is writable: %2$s"
+msgstr "ファイルの%1$sに失敗しました。アップロードディレクトリに書き込み権限があるか確認してください：%2$s"
+
+#: inc/class-ifs-plugin.php:73
+#: inc/class-ifs-plugin.php:102
+msgid "Select All"
+msgstr "すべて選択"
+
+#: inc/class-ifs-plugin.php:74
+msgid "Deselect All"
+msgstr "すべて解除"
+
+#: inc/class-ifs-plugin.php:75
+#: inc/class-ifs-plugin.php:105
+msgid "Import Selected"
+msgstr "選択したファイルをインポート"
+
+#: inc/class-ifs-plugin.php:76
+msgid "Importing..."
+msgstr "インポート中..."
+
+#: inc/class-ifs-plugin.php:77
+msgid "Imported"
+msgstr "インポート済み"
+
+#: inc/class-ifs-plugin.php:78
+msgid "Failed"
+msgstr "失敗"
+
+#: inc/class-ifs-plugin.php:79
+msgid "No files found in this directory."
+msgstr "このディレクトリにはファイルが見つかりませんでした。"
+
+#: inc/class-ifs-plugin.php:80
+#: inc/class-ifs-plugin.php:116
+msgid "Loading..."
+msgstr "読み込み中..."
+
+#: inc/class-ifs-plugin.php:81
+msgid "Already imported"
+msgstr "インポート済み"
+
+#: inc/class-ifs-plugin.php:82
+msgid "View"
+msgstr "表示"
+
+#: inc/class-ifs-plugin.php:83
+msgid "Error loading directory."
+msgstr "ディレクトリの読み込み中にエラーが発生しました。"
+
+#: inc/class-ifs-plugin.php:84
+msgid "Import complete."
+msgstr "インポートが完了しました。"
+
+#: inc/class-ifs-rest-api.php:162
+msgid "Home"
+msgstr "ホーム"
+
+#. translators: 1: plugin name, 2: opening link tag, 3: closing link tag
+#: inc/class-ifs-review-notice.php:123
+#, php-format
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving!"
+msgstr "%1$sをご利用いただきありがとうございます。もしお気に召していただけましたら、%2$s5つ星レビュー%3$sを残していただけませんか？今後の改善に役立てさせていただきます！"
+
+#: inc/class-ifs-review-notice.php:132
+msgid "Leave a Review"
+msgstr "レビューを書く"
+
+#: inc/class-ifs-review-notice.php:135
+msgid "Maybe Later"
+msgstr "後で"
+
+#: inc/class-ifs-settings.php:20
+#: inc/class-ifs-settings.php:166
+msgid "Import from Server Settings"
+msgstr "サーバーからインポート設定"
+
+#: inc/class-ifs-settings.php:47
+msgid "General Settings"
+msgstr "一般設定"
+
+#: inc/class-ifs-settings.php:54
+msgid "Root Directory"
+msgstr "ルートディレクトリ"
+
+#: inc/class-ifs-settings.php:62
+msgid "Import Behavior"
+msgstr "インポート動作"
+
+#: inc/class-ifs-settings.php:70
+msgid "Allowed File Types"
+msgstr "許可されたファイルタイプ"
+
+#: inc/class-ifs-settings.php:95
+msgid "The root directory does not exist. Setting reverted to default."
+msgstr "ルートディレクトリが存在しません。設定をデフォルトに戻しました。"
+
+#: inc/class-ifs-settings.php:120
+msgid "The top-level directory users can browse. Defaults to wp-content."
+msgstr "ユーザーが参照できる最上位ディレクトリです。デフォルトは wp-content です。"
+
+#: inc/class-ifs-settings.php:134
+msgid "Copy (keep original file)"
+msgstr "コピー（元のファイルを保持）"
+
+#: inc/class-ifs-settings.php:137
+msgid "Move (delete original file)"
+msgstr "移動（元のファイルを削除）"
+
+#: inc/class-ifs-settings.php:141
+msgid "How to handle files outside the uploads directory during import."
+msgstr "インポート時にアップロードディレクトリ外のファイルをどのように処理するかを設定します。"
+
+#: inc/class-ifs-settings.php:155
+msgid "Comma-separated list of allowed file extensions (e.g., jpg,png,pdf). Leave empty to allow all WordPress-permitted types."
+msgstr "許可するファイル拡張子をカンマ区切りで入力してください（例：jpg,png,pdf）。空欄の場合、WordPressで許可されたすべてのファイルタイプが対象になります。"

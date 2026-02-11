@@ -1,0 +1,220 @@
+# German (Germany) translation for Import from Server
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Import from Server 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/import-from-server\n"
+"Last-Translator: Miller Media\n"
+"Language-Team: German (Germany)\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-11T08:44:31+00:00\n"
+"PO-Revision-Date: 2026-02-11\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: import-from-server\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+#: import-from-server.php
+#: inc/class-ifs-plugin.php:27
+#: inc/class-ifs-plugin.php:28
+#: inc/class-ifs-plugin.php:96
+#: inc/class-ifs-settings.php:21
+msgid "Import from Server"
+msgstr "Vom Server importieren"
+
+#. Description of the plugin
+#: import-from-server.php
+msgid "Browse files on the server and import them into the WordPress Media Library."
+msgstr "Dateien auf dem Server durchsuchen und in die WordPress-Mediathek importieren."
+
+#. Author of the plugin
+#: import-from-server.php
+msgid "Miller Media"
+msgstr "Miller Media"
+
+#. Author URI of the plugin
+#: import-from-server.php
+msgid "https://www.millermedia.io"
+msgstr "https://www.millermedia.io"
+
+#: import-from-server.php:65
+msgid "Import Files"
+msgstr "Dateien importieren"
+
+#: import-from-server.php:67
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: inc/class-ifs-file-browser.php:21
+msgid "The configured root path does not exist."
+msgstr "Der konfigurierte Stammverzeichnispfad existiert nicht."
+
+#: inc/class-ifs-file-browser.php:26
+msgid "The requested path does not exist."
+msgstr "Der angeforderte Pfad existiert nicht."
+
+#: inc/class-ifs-file-browser.php:31
+msgid "Access denied: path is outside the allowed root directory."
+msgstr "Zugriff verweigert: Der Pfad liegt außerhalb des erlaubten Stammverzeichnisses."
+
+#: inc/class-ifs-file-browser.php:45
+msgid "The requested path is not a directory."
+msgstr "Der angeforderte Pfad ist kein Verzeichnis."
+
+#: inc/class-ifs-file-browser.php:49
+msgid "The directory is not readable."
+msgstr "Das Verzeichnis ist nicht lesbar."
+
+#: inc/class-ifs-file-browser.php:57
+msgid "Failed to read directory contents."
+msgstr "Verzeichnisinhalt konnte nicht gelesen werden."
+
+#: inc/class-ifs-importer.php:21
+msgid "The path is not a file."
+msgstr "Der Pfad ist keine Datei."
+
+#: inc/class-ifs-importer.php:25
+msgid "The file is not readable."
+msgstr "Die Datei ist nicht lesbar."
+
+#: inc/class-ifs-importer.php:31
+msgid "This file type is not allowed."
+msgstr "Dieser Dateityp ist nicht erlaubt."
+
+#: inc/class-ifs-importer.php:36
+msgid "This file type is not in the allowed types list."
+msgstr "Dieser Dateityp ist nicht in der Liste der erlaubten Typen enthalten."
+
+#: inc/class-ifs-importer.php:41
+msgid "This file has already been imported."
+msgstr "Diese Datei wurde bereits importiert."
+
+#. translators: %s: uploads directory path
+#: inc/class-ifs-importer.php:65
+#, php-format
+msgid "Could not create uploads directory: %s"
+msgstr "Upload-Verzeichnis konnte nicht erstellt werden: %s"
+
+#. translators: 1: copy or move, 2: destination path
+#: inc/class-ifs-importer.php:84
+#, php-format
+msgid "Failed to %1$s file. Check that the uploads directory is writable: %2$s"
+msgstr "Datei konnte nicht %1$s werden. Bitte prüfen Sie, ob das Upload-Verzeichnis beschreibbar ist: %2$s"
+
+#: inc/class-ifs-plugin.php:73
+#: inc/class-ifs-plugin.php:102
+msgid "Select All"
+msgstr "Alle auswählen"
+
+#: inc/class-ifs-plugin.php:74
+msgid "Deselect All"
+msgstr "Alle abwählen"
+
+#: inc/class-ifs-plugin.php:75
+#: inc/class-ifs-plugin.php:105
+msgid "Import Selected"
+msgstr "Ausgewählte importieren"
+
+#: inc/class-ifs-plugin.php:76
+msgid "Importing..."
+msgstr "Importiere..."
+
+#: inc/class-ifs-plugin.php:77
+msgid "Imported"
+msgstr "Importiert"
+
+#: inc/class-ifs-plugin.php:78
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: inc/class-ifs-plugin.php:79
+msgid "No files found in this directory."
+msgstr "Keine Dateien in diesem Verzeichnis gefunden."
+
+#: inc/class-ifs-plugin.php:80
+#: inc/class-ifs-plugin.php:116
+msgid "Loading..."
+msgstr "Laden..."
+
+#: inc/class-ifs-plugin.php:81
+msgid "Already imported"
+msgstr "Bereits importiert"
+
+#: inc/class-ifs-plugin.php:82
+msgid "View"
+msgstr "Ansehen"
+
+#: inc/class-ifs-plugin.php:83
+msgid "Error loading directory."
+msgstr "Fehler beim Laden des Verzeichnisses."
+
+#: inc/class-ifs-plugin.php:84
+msgid "Import complete."
+msgstr "Import abgeschlossen."
+
+#: inc/class-ifs-rest-api.php:162
+msgid "Home"
+msgstr "Startseite"
+
+#. translators: 1: plugin name, 2: opening link tag, 3: closing link tag
+#: inc/class-ifs-review-notice.php:123
+#, php-format
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving!"
+msgstr "Hallo! Sie verwenden %1$s jetzt schon eine Weile. Wenn es Ihnen gefällt, würden Sie uns %2$seine 5-Sterne-Bewertung hinterlassen%3$s? Das hilft uns, das Plugin weiter zu verbessern!"
+
+#: inc/class-ifs-review-notice.php:132
+msgid "Leave a Review"
+msgstr "Bewertung hinterlassen"
+
+#: inc/class-ifs-review-notice.php:135
+msgid "Maybe Later"
+msgstr "Vielleicht später"
+
+#: inc/class-ifs-settings.php:20
+#: inc/class-ifs-settings.php:166
+msgid "Import from Server Settings"
+msgstr "Vom Server importieren - Einstellungen"
+
+#: inc/class-ifs-settings.php:47
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"
+
+#: inc/class-ifs-settings.php:54
+msgid "Root Directory"
+msgstr "Stammverzeichnis"
+
+#: inc/class-ifs-settings.php:62
+msgid "Import Behavior"
+msgstr "Import-Verhalten"
+
+#: inc/class-ifs-settings.php:70
+msgid "Allowed File Types"
+msgstr "Erlaubte Dateitypen"
+
+#: inc/class-ifs-settings.php:95
+msgid "The root directory does not exist. Setting reverted to default."
+msgstr "Das Stammverzeichnis existiert nicht. Die Einstellung wurde auf den Standardwert zurückgesetzt."
+
+#: inc/class-ifs-settings.php:120
+msgid "The top-level directory users can browse. Defaults to wp-content."
+msgstr "Das oberste Verzeichnis, das Benutzer durchsuchen können. Standardmäßig wp-content."
+
+#: inc/class-ifs-settings.php:134
+msgid "Copy (keep original file)"
+msgstr "Kopieren (Originaldatei beibehalten)"
+
+#: inc/class-ifs-settings.php:137
+msgid "Move (delete original file)"
+msgstr "Verschieben (Originaldatei löschen)"
+
+#: inc/class-ifs-settings.php:141
+msgid "How to handle files outside the uploads directory during import."
+msgstr "Wie Dateien außerhalb des Upload-Verzeichnisses beim Import behandelt werden sollen."
+
+#: inc/class-ifs-settings.php:155
+msgid "Comma-separated list of allowed file extensions (e.g., jpg,png,pdf). Leave empty to allow all WordPress-permitted types."
+msgstr "Kommagetrennte Liste erlaubter Dateierweiterungen (z. B. jpg,png,pdf). Leer lassen, um alle von WordPress erlaubten Typen zuzulassen."
