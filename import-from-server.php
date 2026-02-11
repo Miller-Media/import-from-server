@@ -58,6 +58,18 @@ if ( is_admin() ) {
 	require_once IFS_PLUGIN_PATH . 'inc/class-ifs-plugin.php';
 	require_once IFS_PLUGIN_PATH . 'inc/class-ifs-review-notice.php';
 
+	add_filter(
+		'plugin_action_links_' . plugin_basename( __FILE__ ),
+		function ( $links ) {
+			$import_link   = '<a href="' . esc_url( admin_url( 'upload.php?page=import-from-server' ) ) . '">'
+				. esc_html__( 'Import Files', 'import-from-server' ) . '</a>';
+			$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=ifs-settings' ) ) . '">'
+				. esc_html__( 'Settings', 'import-from-server' ) . '</a>';
+			array_unshift( $links, $import_link, $settings_link );
+			return $links;
+		}
+	);
+
 	new IFS_Plugin();
 	new IFS_Settings();
 	new IFS_ReviewNotice(
