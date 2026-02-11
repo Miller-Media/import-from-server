@@ -79,6 +79,7 @@ class IFS_Plugin {
 					'noFiles'         => __( 'No files found in this directory.', 'import-from-server' ),
 					'loading'         => __( 'Loading...', 'import-from-server' ),
 					'alreadyImported' => __( 'Already imported', 'import-from-server' ),
+					'viewInLibrary'   => __( 'View', 'import-from-server' ),
 					'errorLoading'    => __( 'Error loading directory.', 'import-from-server' ),
 					'complete'        => __( 'Import complete.', 'import-from-server' ),
 				),

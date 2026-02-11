@@ -70,18 +70,24 @@ class IFS_FileBrowser {
 					'path' => $full_path,
 				);
 			} else {
-				$importable = self::isFileImportable( $full_path );
-				$imported   = self::isAlreadyImported( $full_path );
+				$importable    = self::isFileImportable( $full_path );
+				$attachment_id = self::isAlreadyImported( $full_path );
 
-				$files[] = array(
+				$file_data = array(
 					'name'       => $entry,
 					'path'       => $full_path,
 					'size'       => filesize( $full_path ),
 					'modified'   => filemtime( $full_path ),
 					'mime_type'  => self::getMimeType( $full_path ),
 					'importable' => $importable,
-					'imported'   => $imported,
+					'imported'   => false !== $attachment_id,
 				);
+
+				if ( false !== $attachment_id ) {
+					$file_data['edit_url'] = get_edit_post_link( $attachment_id, 'raw' );
+				}
+
+				$files[] = $file_data;
 			}
 		}
 
@@ -139,21 +145,21 @@ class IFS_FileBrowser {
 	 * Check if a file has already been imported into the Media Library.
 	 *
 	 * @param string $filepath Full path to the file.
-	 * @return bool
+	 * @return int|false Attachment ID if imported, false otherwise.
 	 */
 	public static function isAlreadyImported( $filepath ) {
 		global $wpdb;
 
 		// Check by our custom meta key first.
-		$count = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
+		$post_id = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
-				"SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key = '_ifs_original_path' AND meta_value = %s",
+				"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_ifs_original_path' AND meta_value = %s LIMIT 1",
 				$filepath
 			)
 		);
 
-		if ( $count > 0 ) {
-			return true;
+		if ( $post_id ) {
+			return (int) $post_id;
 		}
 
 		// Also check _wp_attached_file for files already in uploads dir.
@@ -162,14 +168,16 @@ class IFS_FileBrowser {
 
 		if ( 0 === strpos( $filepath, $upload_base ) ) {
 			$relative = ltrim( str_replace( $upload_base, '', $filepath ), '/' );
-			$count    = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
+			$post_id  = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 				$wpdb->prepare(
-					"SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value = %s",
+					"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value = %s LIMIT 1",
 					$relative
 				)
 			);
 
-			return $count > 0;
+			if ( $post_id ) {
+				return (int) $post_id;
+			}
 		}
 
 		return false;

@@ -134,6 +134,9 @@
 			if (file.imported) {
 				rowClass += ' ifs-row-imported';
 				statusHtml = '<span class="ifs-badge ifs-badge-imported">' + ifsData.i18n.alreadyImported + '</span>';
+				if (file.edit_url) {
+					statusHtml += ' <a href="' + escAttr(file.edit_url) + '" class="ifs-view-link">' + ifsData.i18n.viewInLibrary + '</a>';
+				}
 			} else if (!file.importable) {
 				rowClass += ' ifs-row-not-importable';
 				statusHtml = '<span class="ifs-badge ifs-badge-not-importable">' + escHtml('Not allowed') + '</span>';

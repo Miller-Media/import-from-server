@@ -177,6 +177,17 @@
 	color: #d63638;
 }
 
+.ifs-view-link {
+	font-size: 11px;
+	text-decoration: none;
+	color: #2271b1;
+}
+
+.ifs-view-link:hover {
+	color: #135e96;
+	text-decoration: underline;
+}
+
 /* File size column */
 .ifs-col-size {
 	white-space: nowrap;
