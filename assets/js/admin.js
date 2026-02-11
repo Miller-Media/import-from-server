@@ -64,6 +64,9 @@
 		}).done(function (response) {
 			renderBreadcrumbs(response.breadcrumbs);
 			renderFileList(response.directories, response.files);
+			// Disable Select All when no importable files exist.
+			var hasCheckboxes = $('.ifs-file-checkbox').length > 0;
+			$('#ifs-select-all').prop('disabled', !hasCheckboxes);
 		}).fail(function (xhr) {
 			var msg = xhr.responseJSON && xhr.responseJSON.message
 				? xhr.responseJSON.message
