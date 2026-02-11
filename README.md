@@ -1,4 +1,4 @@
-![Import from Server](https://ps.w.org/import-from-server/assets/banner-772x250.png)
+![Import from Server](https://raw.githubusercontent.com/Miller-Media/import-from-server/main/assets/banner-772x250.png)
 
 # Import from Server
 
@@ -14,7 +14,7 @@ https://wordpress.org/support/plugin/import-from-server/reviews/#new-post
 
 If you find this plugin useful, consider buying us a coffee:
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/millermedia)
+[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/yOd1JU9MQe)
 
 # For developers contributing to this repository
 For those of you forking this repository, please submit any pull requests to the `develop` branch. `develop` acts as the stable pre-release branch of the plugin. When new versions are released, `develop` will be merged into `master` where the code will then be tagged with the release's version number.
