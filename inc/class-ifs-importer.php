@@ -57,6 +57,15 @@ class IFS_Importer {
 			$settings = get_option( 'ifs_settings', array() );
 			$behavior = isset( $settings['import_behavior'] ) ? $settings['import_behavior'] : 'copy';
 
+			// Ensure the uploads subdirectory exists.
+			if ( ! wp_mkdir_p( $upload_dir['path'] ) ) {
+				return new WP_Error(
+					'ifs_mkdir_failed',
+					/* translators: %s: uploads directory path */
+					sprintf( __( 'Could not create uploads directory: %s', 'import-from-server' ), $upload_dir['path'] )
+				);
+			}
+
 			// Generate unique filename in uploads.
 			$dest_file = trailingslashit( $upload_dir['path'] ) . wp_unique_filename( $upload_dir['path'], $filename );
 
@@ -67,7 +76,16 @@ class IFS_Importer {
 			}
 
 			if ( ! $result ) {
-				return new WP_Error( 'ifs_copy_failed', __( 'Failed to copy/move file to uploads directory.', 'import-from-server' ) );
+				$action = ( 'move' === $behavior ) ? 'move' : 'copy';
+				return new WP_Error(
+					'ifs_copy_failed',
+					sprintf(
+						/* translators: 1: copy or move, 2: destination path */
+						__( 'Failed to %1$s file. Check that the uploads directory is writable: %2$s', 'import-from-server' ),
+						$action,
+						$upload_dir['path']
+					)
+				);
 			}
 
 			$relative_url = ltrim( str_replace( $upload_base, '', $dest_file ), '/' );
