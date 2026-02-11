@@ -1,4 +1,7 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 /**
  * File browser: directory listing and path validation.
  */

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 /**
  * Main plugin controller: admin menu, enqueuing, page rendering.
  */

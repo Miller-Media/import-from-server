@@ -1,4 +1,7 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 /**
  * Review Notice class
  *

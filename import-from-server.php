@@ -19,13 +19,6 @@ define( 'IFS_PLUGIN_VERSION', '1.0.0' );
 define( 'IFS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'IFS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-add_action(
-	'plugins_loaded',
-	function () {
-		load_plugin_textdomain( 'import-from-server', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-	}
-);
-
 // REST API + dependencies must load outside is_admin() because REST requests don't pass is_admin().
 require_once IFS_PLUGIN_PATH . 'inc/class-ifs-file-browser.php';
 require_once IFS_PLUGIN_PATH . 'inc/class-ifs-importer.php';
