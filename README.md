@@ -1,14 +1,12 @@
-![Import from Server](https://raw.githubusercontent.com/Miller-Media/import-from-server/main/assets/banner-772x250.png)
-
-# Import from Server
+# Import Files from Server
 
 Browse files on the server and import them directly into the WordPress Media Library — no need to download and re-upload.
 
 Our plugin can be downloaded for free from the WordPress repository here:
-https://wordpress.org/plugins/import-from-server/
+https://wordpress.org/plugins/import-files-from-server/
 
 Please help us gain visibility on this plugin by giving us a five-star rating on the WordPress plugin page here:
-https://wordpress.org/support/plugin/import-from-server/reviews/#new-post
+https://wordpress.org/support/plugin/import-files-from-server/reviews/#new-post
 
 ## Support Development
 
@@ -23,4 +21,4 @@ Also, thank you! We need developers like you to help us make this a great plugin
 
 ---
 
-##### Miller Media offers maintenance, design and custom development for WordPress as a service. If you need help with your site, don't hesitate to visit the [Miller Media website](https://www.millermedia.io) or contact us at [support@miller-media.com](mailto:support@miller-media.com)
+##### Miller Media offers maintenance, design and custom development for WordPress as a service. If you need help with your site, don't hesitate to visit the [Miller Media website](https://mattmiller.ai) or contact us at [support@miller-media.com](mailto:support@miller-media.com)
