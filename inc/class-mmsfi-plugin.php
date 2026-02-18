@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main plugin controller: admin menu, enqueuing, page rendering.
  */
-class IFSE_Plugin {
+class MMSFI_Plugin {
 
 	/**
 	 * Admin page hook suffix.
@@ -46,30 +46,30 @@ class IFSE_Plugin {
 		}
 
 		wp_enqueue_style(
-			'ifse-admin-css',
-			IFSE_PLUGIN_URL . 'assets/css/admin.css',
+			'mmsfi-admin-css',
+			MMSFI_PLUGIN_URL . 'assets/css/admin.css',
 			array(),
-			IFSE_PLUGIN_VERSION
+			MMSFI_PLUGIN_VERSION
 		);
 
 		wp_enqueue_script(
-			'ifse-admin-js',
-			IFSE_PLUGIN_URL . 'assets/js/admin.js',
+			'mmsfi-admin-js',
+			MMSFI_PLUGIN_URL . 'assets/js/admin.js',
 			array( 'jquery', 'wp-api-request' ),
-			IFSE_PLUGIN_VERSION,
+			MMSFI_PLUGIN_VERSION,
 			true
 		);
 
-		$settings  = get_option( 'ifse_settings', array() );
+		$settings  = get_option( 'mmsfi_settings', array() );
 		$root_path = isset( $settings['root_path'] ) && '' !== $settings['root_path']
 			? $settings['root_path']
 			: WP_CONTENT_DIR;
 
 		wp_localize_script(
-			'ifse-admin-js',
-			'ifsData',
+			'mmsfi-admin-js',
+			'mmsfiData',
 			array(
-				'restUrl'  => rest_url( IFSE_REST_API::NAMESPACE ),
+				'restUrl'  => rest_url( MMSFI_REST_API::NAMESPACE ),
 				'nonce'    => wp_create_nonce( 'wp_rest' ),
 				'rootPath' => $root_path,
 				'i18n'     => array(

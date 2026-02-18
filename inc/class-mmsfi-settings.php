@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Settings page for Import Files from Server.
  */
-class IFSE_Settings {
+class MMSFI_Settings {
 
 	/**
 	 * Constructor.
@@ -23,7 +23,7 @@ class IFSE_Settings {
 			__( 'Import Files from Server Settings', 'miller-media-server-file-import' ),
 			__( 'Import Files from Server', 'miller-media-server-file-import' ),
 			'manage_options',
-			'ifse-settings',
+			'mmsfi-settings',
 			array( $this, 'renderSettingsPage' )
 		);
 	}
@@ -33,8 +33,8 @@ class IFSE_Settings {
 	 */
 	public function registerSettings() {
 		register_setting(
-			'ifse_settings_group',
-			'ifse_settings',
+			'mmsfi_settings_group',
+			'mmsfi_settings',
 			array(
 				'sanitize_callback' => array( $this, 'sanitizeSettings' ),
 				'default'           => array(
@@ -46,34 +46,34 @@ class IFSE_Settings {
 		);
 
 		add_settings_section(
-			'ifse_general_section',
+			'mmsfi_general_section',
 			__( 'General Settings', 'miller-media-server-file-import' ),
 			'__return_null',
-			'ifse-settings'
+			'mmsfi-settings'
 		);
 
 		add_settings_field(
-			'ifse_root_path',
+			'mmsfi_root_path',
 			__( 'Root Directory', 'miller-media-server-file-import' ),
 			array( $this, 'renderRootPathField' ),
-			'ifse-settings',
-			'ifse_general_section'
+			'mmsfi-settings',
+			'mmsfi_general_section'
 		);
 
 		add_settings_field(
-			'ifse_import_behavior',
+			'mmsfi_import_behavior',
 			__( 'Import Behavior', 'miller-media-server-file-import' ),
 			array( $this, 'renderImportBehaviorField' ),
-			'ifse-settings',
-			'ifse_general_section'
+			'mmsfi-settings',
+			'mmsfi_general_section'
 		);
 
 		add_settings_field(
-			'ifse_allowed_types',
+			'mmsfi_allowed_types',
 			__( 'Allowed File Types', 'miller-media-server-file-import' ),
 			array( $this, 'renderAllowedTypesField' ),
-			'ifse-settings',
-			'ifse_general_section'
+			'mmsfi-settings',
+			'mmsfi_general_section'
 		);
 	}
 
@@ -93,8 +93,8 @@ class IFSE_Settings {
 		// Validate that root path exists.
 		if ( '' !== $sanitized['root_path'] && ! is_dir( $sanitized['root_path'] ) ) {
 			add_settings_error(
-				'ifse_settings',
-				'ifse_invalid_root',
+				'mmsfi_settings',
+				'mmsfi_invalid_root',
 				__( 'The root directory does not exist. Setting reverted to default.', 'miller-media-server-file-import' )
 			);
 			$sanitized['root_path'] = WP_CONTENT_DIR;
@@ -115,10 +115,10 @@ class IFSE_Settings {
 	 * Render the root path field.
 	 */
 	public function renderRootPathField() {
-		$settings = get_option( 'ifse_settings', array() );
+		$settings = get_option( 'mmsfi_settings', array() );
 		$value    = isset( $settings['root_path'] ) ? $settings['root_path'] : WP_CONTENT_DIR;
 		?>
-		<input type="text" name="ifse_settings[root_path]" value="<?php echo esc_attr( $value ); ?>" class="regular-text" />
+		<input type="text" name="mmsfi_settings[root_path]" value="<?php echo esc_attr( $value ); ?>" class="regular-text" />
 		<p class="description">
 			<?php esc_html_e( 'The top-level directory users can browse. Defaults to wp-content.', 'miller-media-server-file-import' ); ?>
 		</p>
@@ -129,10 +129,10 @@ class IFSE_Settings {
 	 * Render the import behavior field.
 	 */
 	public function renderImportBehaviorField() {
-		$settings = get_option( 'ifse_settings', array() );
+		$settings = get_option( 'mmsfi_settings', array() );
 		$value    = isset( $settings['import_behavior'] ) ? $settings['import_behavior'] : 'copy';
 		?>
-		<select name="ifse_settings[import_behavior]">
+		<select name="mmsfi_settings[import_behavior]">
 			<option value="copy" <?php selected( $value, 'copy' ); ?>>
 				<?php esc_html_e( 'Copy (keep original file)', 'miller-media-server-file-import' ); ?>
 			</option>
@@ -150,10 +150,10 @@ class IFSE_Settings {
 	 * Render the allowed types field.
 	 */
 	public function renderAllowedTypesField() {
-		$settings = get_option( 'ifse_settings', array() );
+		$settings = get_option( 'mmsfi_settings', array() );
 		$value    = isset( $settings['allowed_types'] ) ? $settings['allowed_types'] : '';
 		?>
-		<input type="text" name="ifse_settings[allowed_types]" value="<?php echo esc_attr( $value ); ?>" class="regular-text" />
+		<input type="text" name="mmsfi_settings[allowed_types]" value="<?php echo esc_attr( $value ); ?>" class="regular-text" />
 		<p class="description">
 			<?php esc_html_e( 'Comma-separated list of allowed file extensions (e.g., jpg,png,pdf). Leave empty to allow all WordPress-permitted types.', 'miller-media-server-file-import' ); ?>
 		</p>
@@ -169,8 +169,8 @@ class IFSE_Settings {
 			<h1><?php esc_html_e( 'Import Files from Server Settings', 'miller-media-server-file-import' ); ?></h1>
 			<form method="post" action="options.php">
 				<?php
-				settings_fields( 'ifse_settings_group' );
-				do_settings_sections( 'ifse-settings' );
+				settings_fields( 'mmsfi_settings_group' );
+				do_settings_sections( 'mmsfi-settings' );
 				submit_button();
 				?>
 			</form>

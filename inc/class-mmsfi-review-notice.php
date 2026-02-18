@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Displays a dismissible admin notice after 14 days of usage requesting a review.
  */
-class IFSE_ReviewNotice {
+class MMSFI_ReviewNotice {
 
 	/**
 	 * Plugin display name.

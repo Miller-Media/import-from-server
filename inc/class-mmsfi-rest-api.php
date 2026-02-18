@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * REST API endpoints for browsing and importing files.
  */
-class IFSE_REST_API {
+class MMSFI_REST_API {
 
 	/**
 	 * REST namespace.
@@ -81,24 +81,24 @@ class IFSE_REST_API {
 		$path = $request->get_param( 'path' );
 
 		if ( empty( $path ) ) {
-			$settings = get_option( 'ifse_settings', array() );
+			$settings = get_option( 'mmsfi_settings', array() );
 			$path     = isset( $settings['root_path'] ) && '' !== $settings['root_path']
 				? $settings['root_path']
 				: WP_CONTENT_DIR;
 		}
 
-		$validated = IFSE_FileBrowser::validatePath( $path );
+		$validated = MMSFI_FileBrowser::validatePath( $path );
 		if ( is_wp_error( $validated ) ) {
 			return $validated;
 		}
 
-		$listing = IFSE_FileBrowser::listDirectory( $validated );
+		$listing = MMSFI_FileBrowser::listDirectory( $validated );
 		if ( is_wp_error( $listing ) ) {
 			return $listing;
 		}
 
 		// Build breadcrumb data.
-		$settings  = get_option( 'ifse_settings', array() );
+		$settings  = get_option( 'mmsfi_settings', array() );
 		$root_path = isset( $settings['root_path'] ) && '' !== $settings['root_path']
 			? realpath( $settings['root_path'] )
 			: realpath( WP_CONTENT_DIR );
@@ -127,7 +127,7 @@ class IFSE_REST_API {
 
 		foreach ( $files as $filepath ) {
 			$filepath  = sanitize_text_field( $filepath );
-			$attach_id = IFSE_Importer::importFile( $filepath );
+			$attach_id = MMSFI_Importer::importFile( $filepath );
 
 			if ( is_wp_error( $attach_id ) ) {
 				$results[] = array(

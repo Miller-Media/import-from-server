@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * File browser: directory listing and path validation.
  */
-class IFSE_FileBrowser {
+class MMSFI_FileBrowser {
 
 	/**
 	 * Validate that a path is real, exists, and is within the allowed root.
@@ -14,24 +14,24 @@ class IFSE_FileBrowser {
 	 * @return string|WP_Error Resolved real path or error.
 	 */
 	public static function validatePath( $path ) {
-		$settings  = get_option( 'ifse_settings', array() );
+		$settings  = get_option( 'mmsfi_settings', array() );
 		$root_path = isset( $settings['root_path'] ) && '' !== $settings['root_path']
 			? $settings['root_path']
 			: WP_CONTENT_DIR;
 
 		$real_root = realpath( $root_path );
 		if ( false === $real_root ) {
-			return new WP_Error( 'ifse_invalid_root', __( 'The configured root path does not exist.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_invalid_root', __( 'The configured root path does not exist.', 'miller-media-server-file-import' ) );
 		}
 
 		$real_path = realpath( $path );
 		if ( false === $real_path ) {
-			return new WP_Error( 'ifse_path_not_found', __( 'The requested path does not exist.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_path_not_found', __( 'The requested path does not exist.', 'miller-media-server-file-import' ) );
 		}
 
 		// Boundary check: the resolved path must start with the root.
 		if ( 0 !== strpos( $real_path, $real_root ) ) {
-			return new WP_Error( 'ifse_path_outside_root', __( 'Access denied: path is outside the allowed root directory.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_path_outside_root', __( 'Access denied: path is outside the allowed root directory.', 'miller-media-server-file-import' ) );
 		}
 
 		return $real_path;
@@ -45,11 +45,11 @@ class IFSE_FileBrowser {
 	 */
 	public static function listDirectory( $path ) {
 		if ( ! is_dir( $path ) ) {
-			return new WP_Error( 'ifse_not_directory', __( 'The requested path is not a directory.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_not_directory', __( 'The requested path is not a directory.', 'miller-media-server-file-import' ) );
 		}
 
 		if ( ! is_readable( $path ) ) {
-			return new WP_Error( 'ifse_not_readable', __( 'The directory is not readable.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_not_readable', __( 'The directory is not readable.', 'miller-media-server-file-import' ) );
 		}
 
 		$directories = array();
@@ -57,7 +57,7 @@ class IFSE_FileBrowser {
 		$entries     = scandir( $path );
 
 		if ( false === $entries ) {
-			return new WP_Error( 'ifse_scan_failed', __( 'Failed to read directory contents.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_scan_failed', __( 'Failed to read directory contents.', 'miller-media-server-file-import' ) );
 		}
 
 		foreach ( $entries as $entry ) {
@@ -128,7 +128,7 @@ class IFSE_FileBrowser {
 		}
 
 		// Check against allowed types setting.
-		$settings      = get_option( 'ifse_settings', array() );
+		$settings      = get_option( 'mmsfi_settings', array() );
 		$allowed_types = isset( $settings['allowed_types'] ) ? trim( $settings['allowed_types'] ) : '';
 
 		if ( '' !== $allowed_types ) {
@@ -156,7 +156,7 @@ class IFSE_FileBrowser {
 		// Check by our custom meta key first.
 		$post_id = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
-				"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_ifse_original_path' AND meta_value = %s LIMIT 1",
+				"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_mmsfi_original_path' AND meta_value = %s LIMIT 1",
 				$filepath
 			)
 		);

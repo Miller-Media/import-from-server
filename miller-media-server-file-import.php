@@ -16,26 +16,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'IFSE_PLUGIN_VERSION', '1.0.0' );
-define( 'IFSE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'IFSE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'MMSFI_PLUGIN_VERSION', '1.0.0' );
+define( 'MMSFI_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'MMSFI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 // REST API + dependencies must load outside is_admin() because REST requests don't pass is_admin().
-require_once IFSE_PLUGIN_PATH . 'inc/class-ifse-file-browser.php';
-require_once IFSE_PLUGIN_PATH . 'inc/class-ifse-importer.php';
-require_once IFSE_PLUGIN_PATH . 'inc/class-ifse-rest-api.php';
+require_once MMSFI_PLUGIN_PATH . 'inc/class-mmsfi-file-browser.php';
+require_once MMSFI_PLUGIN_PATH . 'inc/class-mmsfi-importer.php';
+require_once MMSFI_PLUGIN_PATH . 'inc/class-mmsfi-rest-api.php';
 
-new IFSE_REST_API();
+new MMSFI_REST_API();
 
 register_activation_hook(
 	__FILE__,
 	function () {
-		if ( ! get_option( 'ifse_activated_on' ) ) {
-			update_option( 'ifse_activated_on', time() );
+		if ( ! get_option( 'mmsfi_activated_on' ) ) {
+			update_option( 'mmsfi_activated_on', time() );
 		}
-		if ( false === get_option( 'ifse_settings' ) ) {
+		if ( false === get_option( 'mmsfi_settings' ) ) {
 			update_option(
-				'ifse_settings',
+				'mmsfi_settings',
 				array(
 					'root_path'       => WP_CONTENT_DIR,
 					'import_behavior' => 'copy',
@@ -48,28 +48,28 @@ register_activation_hook(
 
 if ( is_admin() ) {
 
-	require_once IFSE_PLUGIN_PATH . 'inc/class-ifse-settings.php';
-	require_once IFSE_PLUGIN_PATH . 'inc/class-ifse-plugin.php';
-	require_once IFSE_PLUGIN_PATH . 'inc/class-ifse-review-notice.php';
+	require_once MMSFI_PLUGIN_PATH . 'inc/class-mmsfi-settings.php';
+	require_once MMSFI_PLUGIN_PATH . 'inc/class-mmsfi-plugin.php';
+	require_once MMSFI_PLUGIN_PATH . 'inc/class-mmsfi-review-notice.php';
 
 	add_filter(
 		'plugin_action_links_' . plugin_basename( __FILE__ ),
 		function ( $links ) {
 			$import_link   = '<a href="' . esc_url( admin_url( 'upload.php?page=miller-media-server-file-import' ) ) . '">'
 				. esc_html__( 'Import Files', 'miller-media-server-file-import' ) . '</a>';
-			$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=ifse-settings' ) ) . '">'
+			$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=mmsfi-settings' ) ) . '">'
 				. esc_html__( 'Settings', 'miller-media-server-file-import' ) . '</a>';
 			array_unshift( $links, $import_link, $settings_link );
 			return $links;
 		}
 	);
 
-	new IFSE_Plugin();
-	new IFSE_Settings();
-	new IFSE_ReviewNotice(
+	new MMSFI_Plugin();
+	new MMSFI_Settings();
+	new MMSFI_ReviewNotice(
 		'Miller Media Server File Import',
 		'miller-media-server-file-import',
-		'ifse_activated_on',
+		'mmsfi_activated_on',
 		'miller-media-server-file-import',
 		'',
 		'dashicons-upload'

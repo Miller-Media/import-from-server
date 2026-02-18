@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * File importer: imports server files into the WordPress Media Library.
  */
-class IFSE_Importer {
+class MMSFI_Importer {
 
 	/**
 	 * Import a file into the Media Library.
@@ -15,33 +15,33 @@ class IFSE_Importer {
 	 */
 	public static function importFile( $filepath ) {
 		// Validate path is within allowed root.
-		$validated = IFSE_FileBrowser::validatePath( $filepath );
+		$validated = MMSFI_FileBrowser::validatePath( $filepath );
 		if ( is_wp_error( $validated ) ) {
 			return $validated;
 		}
 
 		if ( ! is_file( $validated ) ) {
-			return new WP_Error( 'ifse_not_file', __( 'The path is not a file.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_not_file', __( 'The path is not a file.', 'miller-media-server-file-import' ) );
 		}
 
 		if ( ! is_readable( $validated ) ) {
-			return new WP_Error( 'ifse_not_readable', __( 'The file is not readable.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_not_readable', __( 'The file is not readable.', 'miller-media-server-file-import' ) );
 		}
 
 		// Check MIME type.
 		$filetype = wp_check_filetype_and_ext( $validated, basename( $validated ) );
 		if ( empty( $filetype['type'] ) ) {
-			return new WP_Error( 'ifse_invalid_type', __( 'This file type is not allowed.', 'miller-media-server-file-import' ) );
+			return new WP_Error( 'mmsfi_invalid_type', __( 'This file type is not allowed.', 'miller-media-server-file-import' ) );
 		}
 
 		// Check if importable (including allowed_types setting).
-		if ( ! IFSE_FileBrowser::isFileImportable( $validated ) ) {
-			return new WP_Error( 'ifse_type_not_allowed', __( 'This file type is not in the allowed types list.', 'miller-media-server-file-import' ) );
+		if ( ! MMSFI_FileBrowser::isFileImportable( $validated ) ) {
+			return new WP_Error( 'mmsfi_type_not_allowed', __( 'This file type is not in the allowed types list.', 'miller-media-server-file-import' ) );
 		}
 
 		// Check for duplicates.
-		if ( IFSE_FileBrowser::isAlreadyImported( $validated ) ) {
-			return new WP_Error( 'ifse_already_imported', __( 'This file has already been imported.', 'miller-media-server-file-import' ) );
+		if ( MMSFI_FileBrowser::isAlreadyImported( $validated ) ) {
+			return new WP_Error( 'mmsfi_already_imported', __( 'This file has already been imported.', 'miller-media-server-file-import' ) );
 		}
 
 		$upload_dir  = wp_upload_dir();
@@ -57,13 +57,13 @@ class IFSE_Importer {
 			$relative_url = ltrim( str_replace( $upload_base, '', $validated ), '/' );
 		} else {
 			// File is outside uploads — copy or move based on settings.
-			$settings = get_option( 'ifse_settings', array() );
+			$settings = get_option( 'mmsfi_settings', array() );
 			$behavior = isset( $settings['import_behavior'] ) ? $settings['import_behavior'] : 'copy';
 
 			// Ensure the uploads subdirectory exists.
 			if ( ! wp_mkdir_p( $upload_dir['path'] ) ) {
 				return new WP_Error(
-					'ifse_mkdir_failed',
+					'mmsfi_mkdir_failed',
 					/* translators: %s: uploads directory path */
 					sprintf( __( 'Could not create uploads directory: %s', 'miller-media-server-file-import' ), $upload_dir['path'] )
 				);
@@ -81,7 +81,7 @@ class IFSE_Importer {
 			if ( ! $result ) {
 				$action = ( 'move' === $behavior ) ? 'move' : 'copy';
 				return new WP_Error(
-					'ifse_copy_failed',
+					'mmsfi_copy_failed',
 					sprintf(
 						/* translators: 1: copy or move, 2: destination path */
 						__( 'Failed to %1$s file. Check that the uploads directory is writable: %2$s', 'miller-media-server-file-import' ),
@@ -115,7 +115,7 @@ class IFSE_Importer {
 		wp_update_attachment_metadata( $attach_id, $metadata );
 
 		// Store original path for dedup/traceability.
-		update_post_meta( $attach_id, '_ifse_original_path', $validated );
+		update_post_meta( $attach_id, '_mmsfi_original_path', $validated );
 
 		return $attach_id;
 	}
