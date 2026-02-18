@@ -21,27 +21,27 @@ class IFSE_Importer {
 		}
 
 		if ( ! is_file( $validated ) ) {
-			return new WP_Error( 'ifse_not_file', __( 'The path is not a file.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_not_file', __( 'The path is not a file.', 'miller-media-server-file-import' ) );
 		}
 
 		if ( ! is_readable( $validated ) ) {
-			return new WP_Error( 'ifse_not_readable', __( 'The file is not readable.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_not_readable', __( 'The file is not readable.', 'miller-media-server-file-import' ) );
 		}
 
 		// Check MIME type.
 		$filetype = wp_check_filetype_and_ext( $validated, basename( $validated ) );
 		if ( empty( $filetype['type'] ) ) {
-			return new WP_Error( 'ifse_invalid_type', __( 'This file type is not allowed.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_invalid_type', __( 'This file type is not allowed.', 'miller-media-server-file-import' ) );
 		}
 
 		// Check if importable (including allowed_types setting).
 		if ( ! IFSE_FileBrowser::isFileImportable( $validated ) ) {
-			return new WP_Error( 'ifse_type_not_allowed', __( 'This file type is not in the allowed types list.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_type_not_allowed', __( 'This file type is not in the allowed types list.', 'miller-media-server-file-import' ) );
 		}
 
 		// Check for duplicates.
 		if ( IFSE_FileBrowser::isAlreadyImported( $validated ) ) {
-			return new WP_Error( 'ifse_already_imported', __( 'This file has already been imported.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_already_imported', __( 'This file has already been imported.', 'miller-media-server-file-import' ) );
 		}
 
 		$upload_dir  = wp_upload_dir();
@@ -65,7 +65,7 @@ class IFSE_Importer {
 				return new WP_Error(
 					'ifse_mkdir_failed',
 					/* translators: %s: uploads directory path */
-					sprintf( __( 'Could not create uploads directory: %s', 'import-files-from-server' ), $upload_dir['path'] )
+					sprintf( __( 'Could not create uploads directory: %s', 'miller-media-server-file-import' ), $upload_dir['path'] )
 				);
 			}
 
@@ -84,7 +84,7 @@ class IFSE_Importer {
 					'ifse_copy_failed',
 					sprintf(
 						/* translators: 1: copy or move, 2: destination path */
-						__( 'Failed to %1$s file. Check that the uploads directory is writable: %2$s', 'import-files-from-server' ),
+						__( 'Failed to %1$s file. Check that the uploads directory is writable: %2$s', 'miller-media-server-file-import' ),
 						$action,
 						$upload_dir['path']
 					)

@@ -20,8 +20,8 @@ class IFSE_Settings {
 	 */
 	public function addSettingsPage() {
 		add_options_page(
-			__( 'Import Files from Server Settings', 'import-files-from-server' ),
-			__( 'Import Files from Server', 'import-files-from-server' ),
+			__( 'Import Files from Server Settings', 'miller-media-server-file-import' ),
+			__( 'Import Files from Server', 'miller-media-server-file-import' ),
 			'manage_options',
 			'ifse-settings',
 			array( $this, 'renderSettingsPage' )
@@ -47,14 +47,14 @@ class IFSE_Settings {
 
 		add_settings_section(
 			'ifse_general_section',
-			__( 'General Settings', 'import-files-from-server' ),
+			__( 'General Settings', 'miller-media-server-file-import' ),
 			'__return_null',
 			'ifse-settings'
 		);
 
 		add_settings_field(
 			'ifse_root_path',
-			__( 'Root Directory', 'import-files-from-server' ),
+			__( 'Root Directory', 'miller-media-server-file-import' ),
 			array( $this, 'renderRootPathField' ),
 			'ifse-settings',
 			'ifse_general_section'
@@ -62,7 +62,7 @@ class IFSE_Settings {
 
 		add_settings_field(
 			'ifse_import_behavior',
-			__( 'Import Behavior', 'import-files-from-server' ),
+			__( 'Import Behavior', 'miller-media-server-file-import' ),
 			array( $this, 'renderImportBehaviorField' ),
 			'ifse-settings',
 			'ifse_general_section'
@@ -70,7 +70,7 @@ class IFSE_Settings {
 
 		add_settings_field(
 			'ifse_allowed_types',
-			__( 'Allowed File Types', 'import-files-from-server' ),
+			__( 'Allowed File Types', 'miller-media-server-file-import' ),
 			array( $this, 'renderAllowedTypesField' ),
 			'ifse-settings',
 			'ifse_general_section'
@@ -95,7 +95,7 @@ class IFSE_Settings {
 			add_settings_error(
 				'ifse_settings',
 				'ifse_invalid_root',
-				__( 'The root directory does not exist. Setting reverted to default.', 'import-files-from-server' )
+				__( 'The root directory does not exist. Setting reverted to default.', 'miller-media-server-file-import' )
 			);
 			$sanitized['root_path'] = WP_CONTENT_DIR;
 		}
@@ -120,7 +120,7 @@ class IFSE_Settings {
 		?>
 		<input type="text" name="ifse_settings[root_path]" value="<?php echo esc_attr( $value ); ?>" class="regular-text" />
 		<p class="description">
-			<?php esc_html_e( 'The top-level directory users can browse. Defaults to wp-content.', 'import-files-from-server' ); ?>
+			<?php esc_html_e( 'The top-level directory users can browse. Defaults to wp-content.', 'miller-media-server-file-import' ); ?>
 		</p>
 		<?php
 	}
@@ -134,14 +134,14 @@ class IFSE_Settings {
 		?>
 		<select name="ifse_settings[import_behavior]">
 			<option value="copy" <?php selected( $value, 'copy' ); ?>>
-				<?php esc_html_e( 'Copy (keep original file)', 'import-files-from-server' ); ?>
+				<?php esc_html_e( 'Copy (keep original file)', 'miller-media-server-file-import' ); ?>
 			</option>
 			<option value="move" <?php selected( $value, 'move' ); ?>>
-				<?php esc_html_e( 'Move (delete original file)', 'import-files-from-server' ); ?>
+				<?php esc_html_e( 'Move (delete original file)', 'miller-media-server-file-import' ); ?>
 			</option>
 		</select>
 		<p class="description">
-			<?php esc_html_e( 'How to handle files outside the uploads directory during import.', 'import-files-from-server' ); ?>
+			<?php esc_html_e( 'How to handle files outside the uploads directory during import.', 'miller-media-server-file-import' ); ?>
 		</p>
 		<?php
 	}
@@ -155,7 +155,7 @@ class IFSE_Settings {
 		?>
 		<input type="text" name="ifse_settings[allowed_types]" value="<?php echo esc_attr( $value ); ?>" class="regular-text" />
 		<p class="description">
-			<?php esc_html_e( 'Comma-separated list of allowed file extensions (e.g., jpg,png,pdf). Leave empty to allow all WordPress-permitted types.', 'import-files-from-server' ); ?>
+			<?php esc_html_e( 'Comma-separated list of allowed file extensions (e.g., jpg,png,pdf). Leave empty to allow all WordPress-permitted types.', 'miller-media-server-file-import' ); ?>
 		</p>
 		<?php
 	}
@@ -166,7 +166,7 @@ class IFSE_Settings {
 	public function renderSettingsPage() {
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Import Files from Server Settings', 'import-files-from-server' ); ?></h1>
+			<h1><?php esc_html_e( 'Import Files from Server Settings', 'miller-media-server-file-import' ); ?></h1>
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( 'ifse_settings_group' );

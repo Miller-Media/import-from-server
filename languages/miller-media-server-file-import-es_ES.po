@@ -1,220 +1,221 @@
-# Italian translation for Import Files from Server plugin.
+# Spanish (Spain) translation for Import Files from Server
 # Copyright (C) 2026 Miller Media
 # This file is distributed under the GPLv2.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Import Files from Server 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/import-files-from-server\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/miller-media-server-file-import\n"
 "Last-Translator: Miller Media\n"
-"Language-Team: Italian\n"
-"Language: it_IT\n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-11T08:44:31+00:00\n"
 "PO-Revision-Date: 2026-02-11\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: import-files-from-server\n"
+"X-Domain: miller-media-server-file-import\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Plugin Name of the plugin
-#: import-files-from-server.php
+#: miller-media-server-file-import.php
 #: inc/class-ifs-plugin.php:27
 #: inc/class-ifs-plugin.php:28
 #: inc/class-ifs-plugin.php:96
 #: inc/class-ifs-settings.php:21
 msgid "Import Files from Server"
-msgstr "Importa dal server"
+msgstr "Importar desde el Servidor"
 
 #. Description of the plugin
-#: import-files-from-server.php
+#: miller-media-server-file-import.php
 msgid "Browse files on the server and import them into the WordPress Media Library."
-msgstr "Sfoglia i file sul server e importali nella Libreria Media di WordPress."
+msgstr "Explore archivos en el servidor e impórtelos a la Biblioteca de Medios de WordPress."
 
 #. Author of the plugin
-#: import-files-from-server.php
+#: miller-media-server-file-import.php
 msgid "Miller Media"
 msgstr "Miller Media"
 
 #. Author URI of the plugin
-#: import-files-from-server.php
+#: miller-media-server-file-import.php
 msgid "https://www.millermedia.io"
 msgstr "https://www.millermedia.io"
 
-#: import-files-from-server.php:65
+#: miller-media-server-file-import.php:65
 msgid "Import Files"
-msgstr "Importa file"
+msgstr "Importar Archivos"
 
-#: import-files-from-server.php:67
+#: miller-media-server-file-import.php:67
 msgid "Settings"
-msgstr "Impostazioni"
+msgstr "Ajustes"
 
 #: inc/class-ifs-file-browser.php:21
 msgid "The configured root path does not exist."
-msgstr "Il percorso radice configurato non esiste."
+msgstr "La ruta raíz configurada no existe."
 
 #: inc/class-ifs-file-browser.php:26
 msgid "The requested path does not exist."
-msgstr "Il percorso richiesto non esiste."
+msgstr "La ruta solicitada no existe."
 
 #: inc/class-ifs-file-browser.php:31
 msgid "Access denied: path is outside the allowed root directory."
-msgstr "Accesso negato: il percorso si trova al di fuori della directory radice consentita."
+msgstr "Acceso denegado: la ruta está fuera del directorio raíz permitido."
 
 #: inc/class-ifs-file-browser.php:45
 msgid "The requested path is not a directory."
-msgstr "Il percorso richiesto non è una directory."
+msgstr "La ruta solicitada no es un directorio."
 
 #: inc/class-ifs-file-browser.php:49
 msgid "The directory is not readable."
-msgstr "La directory non è leggibile."
+msgstr "El directorio no se puede leer."
 
 #: inc/class-ifs-file-browser.php:57
 msgid "Failed to read directory contents."
-msgstr "Impossibile leggere il contenuto della directory."
+msgstr "No se pudo leer el contenido del directorio."
 
 #: inc/class-ifs-importer.php:21
 msgid "The path is not a file."
-msgstr "Il percorso non è un file."
+msgstr "La ruta no es un archivo."
 
 #: inc/class-ifs-importer.php:25
 msgid "The file is not readable."
-msgstr "Il file non è leggibile."
+msgstr "El archivo no se puede leer."
 
 #: inc/class-ifs-importer.php:31
 msgid "This file type is not allowed."
-msgstr "Questo tipo di file non è consentito."
+msgstr "Este tipo de archivo no está permitido."
 
 #: inc/class-ifs-importer.php:36
 msgid "This file type is not in the allowed types list."
-msgstr "Questo tipo di file non è presente nell'elenco dei tipi consentiti."
+msgstr "Este tipo de archivo no está en la lista de tipos permitidos."
 
 #: inc/class-ifs-importer.php:41
 msgid "This file has already been imported."
-msgstr "Questo file è già stato importato."
+msgstr "Este archivo ya ha sido importado."
 
 #. translators: %s: uploads directory path
 #: inc/class-ifs-importer.php:65
 #, php-format
 msgid "Could not create uploads directory: %s"
-msgstr "Impossibile creare la directory di caricamento: %s"
+msgstr "No se pudo crear el directorio de subidas: %s"
 
 #. translators: 1: copy or move, 2: destination path
 #: inc/class-ifs-importer.php:84
 #, php-format
 msgid "Failed to %1$s file. Check that the uploads directory is writable: %2$s"
-msgstr "Impossibile %1$s il file. Verifichi che la directory di caricamento sia scrivibile: %2$s"
+msgstr "No se pudo %1$s el archivo. Verifique que el directorio de subidas tenga permisos de escritura: %2$s"
 
 #: inc/class-ifs-plugin.php:73
 #: inc/class-ifs-plugin.php:102
 msgid "Select All"
-msgstr "Seleziona tutto"
+msgstr "Seleccionar todo"
 
 #: inc/class-ifs-plugin.php:74
 msgid "Deselect All"
-msgstr "Deseleziona tutto"
+msgstr "Deseleccionar todo"
 
 #: inc/class-ifs-plugin.php:75
 #: inc/class-ifs-plugin.php:105
 msgid "Import Selected"
-msgstr "Importa selezionati"
+msgstr "Importar seleccionados"
 
 #: inc/class-ifs-plugin.php:76
 msgid "Importing..."
-msgstr "Importazione in corso..."
+msgstr "Importando..."
 
 #: inc/class-ifs-plugin.php:77
 msgid "Imported"
-msgstr "Importato"
+msgstr "Importado"
 
 #: inc/class-ifs-plugin.php:78
 msgid "Failed"
-msgstr "Non riuscito"
+msgstr "Error"
 
 #: inc/class-ifs-plugin.php:79
 msgid "No files found in this directory."
-msgstr "Nessun file trovato in questa directory."
+msgstr "No se encontraron archivos en este directorio."
 
 #: inc/class-ifs-plugin.php:80
 #: inc/class-ifs-plugin.php:116
 msgid "Loading..."
-msgstr "Caricamento..."
+msgstr "Cargando..."
 
 #: inc/class-ifs-plugin.php:81
 msgid "Already imported"
-msgstr "Già importato"
+msgstr "Ya importado"
 
 #: inc/class-ifs-plugin.php:82
 msgid "View"
-msgstr "Visualizza"
+msgstr "Ver"
 
 #: inc/class-ifs-plugin.php:83
 msgid "Error loading directory."
-msgstr "Errore durante il caricamento della directory."
+msgstr "Error al cargar el directorio."
 
 #: inc/class-ifs-plugin.php:84
 msgid "Import complete."
-msgstr "Importazione completata."
+msgstr "Importación completada."
 
 #: inc/class-ifs-rest-api.php:162
 msgid "Home"
-msgstr "Home"
+msgstr "Inicio"
 
 #. translators: 1: plugin name, 2: opening link tag, 3: closing link tag
 #: inc/class-ifs-review-notice.php:123
 #, php-format
 msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving!"
-msgstr "Salve! Sta utilizzando %1$s da un po' di tempo. Se Le piace, Le dispiacerebbe %2$slasciare una recensione a 5 stelle%3$s? Ci aiuta a continuare a migliorare!"
+msgstr "Ha estado usando %1$s durante un tiempo. Si le está resultando útil, %2$sle importaría dejarnos una reseña de 5 estrellas%3$s? Nos ayuda a seguir mejorando."
 
 #: inc/class-ifs-review-notice.php:132
 msgid "Leave a Review"
-msgstr "Lascia una recensione"
+msgstr "Dejar una reseña"
 
 #: inc/class-ifs-review-notice.php:135
 msgid "Maybe Later"
-msgstr "Forse più tardi"
+msgstr "Quizás más tarde"
 
 #: inc/class-ifs-settings.php:20
 #: inc/class-ifs-settings.php:166
 msgid "Import Files from Server Settings"
-msgstr "Impostazioni di Importa dal server"
+msgstr "Ajustes de Importar desde el Servidor"
 
 #: inc/class-ifs-settings.php:47
 msgid "General Settings"
-msgstr "Impostazioni generali"
+msgstr "Ajustes generales"
 
 #: inc/class-ifs-settings.php:54
 msgid "Root Directory"
-msgstr "Directory radice"
+msgstr "Directorio raíz"
 
 #: inc/class-ifs-settings.php:62
 msgid "Import Behavior"
-msgstr "Comportamento di importazione"
+msgstr "Comportamiento de importación"
 
 #: inc/class-ifs-settings.php:70
 msgid "Allowed File Types"
-msgstr "Tipi di file consentiti"
+msgstr "Tipos de archivo permitidos"
 
 #: inc/class-ifs-settings.php:95
 msgid "The root directory does not exist. Setting reverted to default."
-msgstr "La directory radice non esiste. L'impostazione è stata ripristinata al valore predefinito."
+msgstr "El directorio raíz no existe. El ajuste se ha revertido al valor predeterminado."
 
 #: inc/class-ifs-settings.php:120
 msgid "The top-level directory users can browse. Defaults to wp-content."
-msgstr "La directory principale che gli utenti possono sfogliare. Il valore predefinito è wp-content."
+msgstr "El directorio de nivel superior que los usuarios pueden explorar. Por defecto es wp-content."
 
 #: inc/class-ifs-settings.php:134
 msgid "Copy (keep original file)"
-msgstr "Copia (mantieni il file originale)"
+msgstr "Copiar (conservar el archivo original)"
 
 #: inc/class-ifs-settings.php:137
 msgid "Move (delete original file)"
-msgstr "Sposta (elimina il file originale)"
+msgstr "Mover (eliminar el archivo original)"
 
 #: inc/class-ifs-settings.php:141
 msgid "How to handle files outside the uploads directory during import."
-msgstr "Come gestire i file al di fuori della directory di caricamento durante l'importazione."
+msgstr "Cómo manejar los archivos fuera del directorio de subidas durante la importación."
 
 #: inc/class-ifs-settings.php:155
 msgid "Comma-separated list of allowed file extensions (e.g., jpg,png,pdf). Leave empty to allow all WordPress-permitted types."
-msgstr "Elenco di estensioni di file consentite separato da virgole (es. jpg,png,pdf). Lasci vuoto per consentire tutti i tipi permessi da WordPress."
+msgstr "Lista de extensiones de archivo permitidas separadas por comas (por ejemplo, jpg,png,pdf). Déjelo vacío para permitir todos los tipos admitidos por WordPress."

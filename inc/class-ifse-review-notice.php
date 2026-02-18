@@ -123,7 +123,7 @@ class IFSE_ReviewNotice {
 				<?php
 				printf(
 					/* translators: 1: plugin name, 2: opening link tag, 3: closing link tag */
-					esc_html__( 'Hey! You\'ve been using %1$s for a while now. If you\'re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving!', 'import-files-from-server' ),
+					esc_html__( 'Hey! You\'ve been using %1$s for a while now. If you\'re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving!', 'miller-media-server-file-import' ),
 					'<strong>' . esc_html( $this->plugin_name ) . '</strong>',
 					'<a href="' . esc_url( $this->review_url ) . '" target="_blank">',
 					'</a>'
@@ -132,10 +132,10 @@ class IFSE_ReviewNotice {
 			</p>
 			<p style="margin: 0.5em 0;">
 				<a href="<?php echo esc_url( $this->review_url ); ?>" class="button button-primary" target="_blank">
-					<?php esc_html_e( 'Leave a Review', 'import-files-from-server' ); ?>
+					<?php esc_html_e( 'Leave a Review', 'miller-media-server-file-import' ); ?>
 				</a>
 				<a href="<?php echo esc_url( add_query_arg( $this->plugin_slug . '_dismiss_review', 'true' ) ); ?>" class="button button-secondary">
-					<?php esc_html_e( 'Maybe Later', 'import-files-from-server' ); ?>
+					<?php esc_html_e( 'Maybe Later', 'miller-media-server-file-import' ); ?>
 				</a>
 			</p>
 			</div>

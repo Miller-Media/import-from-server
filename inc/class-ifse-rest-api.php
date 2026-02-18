@@ -12,7 +12,7 @@ class IFSE_REST_API {
 	 *
 	 * @var string
 	 */
-	const NAMESPACE = 'import-files-from-server/v1';
+	const NAMESPACE = 'miller-media-server-file-import/v1';
 
 	/**
 	 * Constructor.
@@ -162,7 +162,7 @@ class IFSE_REST_API {
 	private static function buildBreadcrumbs( $current_path, $root_path ) {
 		$breadcrumbs = array(
 			array(
-				'label' => __( 'Home', 'import-files-from-server' ),
+				'label' => __( 'Home', 'miller-media-server-file-import' ),
 				'path'  => $root_path,
 			),
 		);

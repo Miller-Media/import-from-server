@@ -58,7 +58,7 @@
 		$('#ifs-select-all').prop('checked', false);
 
 		wp.apiRequest({
-			path: 'import-files-from-server/v1/browse',
+			path: 'miller-media-server-file-import/v1/browse',
 			data: { path: path },
 			type: 'GET'
 		}).done(function (response) {
@@ -182,7 +182,7 @@
 		$('#ifs-progress-bar').css('width', '0%');
 
 		wp.apiRequest({
-			path: 'import-files-from-server/v1/import',
+			path: 'miller-media-server-file-import/v1/import',
 			type: 'POST',
 			data: JSON.stringify({ files: state.selectedFiles }),
 			contentType: 'application/json'

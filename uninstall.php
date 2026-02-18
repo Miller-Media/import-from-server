@@ -14,4 +14,4 @@ delete_option( 'ifse_settings' );
 delete_option( 'ifse_activated_on' );
 
 // Remove review-dismissed user meta for all users.
-delete_metadata( 'user', 0, 'import-files-from-server_review_dismissed', '', true );
+delete_metadata( 'user', 0, 'miller-media-server-file-import_review_dismissed', '', true );

@@ -1,12 +1,12 @@
-# Import Files from Server
+# Miller Media Server File Import
 
 Browse files on the server and import them directly into the WordPress Media Library — no need to download and re-upload.
 
 Our plugin can be downloaded for free from the WordPress repository here:
-https://wordpress.org/plugins/import-files-from-server/
+https://wordpress.org/plugins/miller-media-server-file-import/
 
 Please help us gain visibility on this plugin by giving us a five-star rating on the WordPress plugin page here:
-https://wordpress.org/support/plugin/import-files-from-server/reviews/#new-post
+https://wordpress.org/support/plugin/miller-media-server-file-import/reviews/#new-post
 
 ## Support Development
 

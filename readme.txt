@@ -1,4 +1,4 @@
-=== Import Files from Server ===
+=== Miller Media Server File Import ===
 Contributors: MillerMediaNow
 Tags: media, import, server, upload, files
 Requires at least: 6.0
@@ -12,7 +12,7 @@ Browse files on the server and import them into the WordPress Media Library.
 
 == Description ==
 
-**Import Files from Server** lets WordPress administrators browse files already on the server and import them directly into the Media Library — no need to download and re-upload.
+**Miller Media Server File Import** lets WordPress administrators browse files already on the server and import them directly into the Media Library — no need to download and re-upload.
 
 This is useful when:
 
@@ -40,10 +40,10 @@ This is useful when:
 
 == Installation ==
 
-1. Upload the `import-files-from-server` folder to `/wp-content/plugins/`
+1. Upload the `miller-media-server-file-import` folder to `/wp-content/plugins/`
 2. Activate the plugin through the Plugins menu
-3. Go to **Media > Import Files from Server** to browse and import files
-4. Optionally configure settings under **Settings > Import Files from Server**
+3. Go to **Media > Miller Media Server File Import** to browse and import files
+4. Optionally configure settings under **Settings > Miller Media Server File Import**
 
 == Frequently Asked Questions ==
 
@@ -61,7 +61,7 @@ The plugin checks for duplicates before importing. Files that have already been 
 
 = Can I change the root browsing directory? =
 
-Yes. Go to **Settings > Import Files from Server** and set the Root Directory to any path on the server.
+Yes. Go to **Settings > Miller Media Server File Import** and set the Root Directory to any path on the server.
 
 = Who can use this plugin? =
 

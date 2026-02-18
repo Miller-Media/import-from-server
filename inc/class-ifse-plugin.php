@@ -27,10 +27,10 @@ class IFSE_Plugin {
 	 */
 	public function addAdminPage() {
 		$this->hook_suffix = add_media_page(
-			__( 'Import Files from Server', 'import-files-from-server' ),
-			__( 'Import Files from Server', 'import-files-from-server' ),
+			__( 'Import Files from Server', 'miller-media-server-file-import' ),
+			__( 'Import Files from Server', 'miller-media-server-file-import' ),
 			'upload_files',
-			'import-files-from-server',
+			'miller-media-server-file-import',
 			array( $this, 'renderAdminPage' )
 		);
 	}
@@ -73,18 +73,18 @@ class IFSE_Plugin {
 				'nonce'    => wp_create_nonce( 'wp_rest' ),
 				'rootPath' => $root_path,
 				'i18n'     => array(
-					'selectAll'       => __( 'Select All', 'import-files-from-server' ),
-					'deselectAll'     => __( 'Deselect All', 'import-files-from-server' ),
-					'importSelected'  => __( 'Import Selected', 'import-files-from-server' ),
-					'importing'       => __( 'Importing...', 'import-files-from-server' ),
-					'imported'        => __( 'Imported', 'import-files-from-server' ),
-					'failed'          => __( 'Failed', 'import-files-from-server' ),
-					'noFiles'         => __( 'No files found in this directory.', 'import-files-from-server' ),
-					'loading'         => __( 'Loading...', 'import-files-from-server' ),
-					'alreadyImported' => __( 'Already imported', 'import-files-from-server' ),
-					'viewInLibrary'   => __( 'View', 'import-files-from-server' ),
-					'errorLoading'    => __( 'Error loading directory.', 'import-files-from-server' ),
-					'complete'        => __( 'Import complete.', 'import-files-from-server' ),
+					'selectAll'       => __( 'Select All', 'miller-media-server-file-import' ),
+					'deselectAll'     => __( 'Deselect All', 'miller-media-server-file-import' ),
+					'importSelected'  => __( 'Import Selected', 'miller-media-server-file-import' ),
+					'importing'       => __( 'Importing...', 'miller-media-server-file-import' ),
+					'imported'        => __( 'Imported', 'miller-media-server-file-import' ),
+					'failed'          => __( 'Failed', 'miller-media-server-file-import' ),
+					'noFiles'         => __( 'No files found in this directory.', 'miller-media-server-file-import' ),
+					'loading'         => __( 'Loading...', 'miller-media-server-file-import' ),
+					'alreadyImported' => __( 'Already imported', 'miller-media-server-file-import' ),
+					'viewInLibrary'   => __( 'View', 'miller-media-server-file-import' ),
+					'errorLoading'    => __( 'Error loading directory.', 'miller-media-server-file-import' ),
+					'complete'        => __( 'Import complete.', 'miller-media-server-file-import' ),
 				),
 			)
 		);
@@ -96,16 +96,16 @@ class IFSE_Plugin {
 	public function renderAdminPage() {
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Import Files from Server', 'import-files-from-server' ); ?></h1>
+			<h1><?php esc_html_e( 'Import Files from Server', 'miller-media-server-file-import' ); ?></h1>
 			<div id="ifs-app">
 				<div id="ifs-breadcrumbs" class="ifs-breadcrumbs"></div>
 				<div id="ifs-toolbar" class="ifs-toolbar">
 					<label class="ifs-select-all-label">
 						<input type="checkbox" id="ifs-select-all" />
-						<span id="ifs-select-all-text"><?php esc_html_e( 'Select All', 'import-files-from-server' ); ?></span>
+						<span id="ifs-select-all-text"><?php esc_html_e( 'Select All', 'miller-media-server-file-import' ); ?></span>
 					</label>
 					<button id="ifs-import-btn" class="button button-primary" disabled>
-						<?php esc_html_e( 'Import Selected', 'import-files-from-server' ); ?> (<span id="ifs-selected-count">0</span>)
+						<?php esc_html_e( 'Import Selected', 'miller-media-server-file-import' ); ?> (<span id="ifs-selected-count">0</span>)
 					</button>
 				</div>
 				<div id="ifs-progress" class="ifs-progress" style="display:none;">
@@ -116,7 +116,7 @@ class IFSE_Plugin {
 					<div id="ifs-import-log" class="ifs-import-log"></div>
 				</div>
 				<div id="ifs-file-list" class="ifs-file-list">
-					<p class="ifs-loading"><?php esc_html_e( 'Loading...', 'import-files-from-server' ); ?></p>
+					<p class="ifs-loading"><?php esc_html_e( 'Loading...', 'miller-media-server-file-import' ); ?></p>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 <?php
 /**
-Plugin Name: Import Files from Server
+Plugin Name: Miller Media Server File Import
 Description: Browse files on the server and import them into the WordPress Media Library.
 Author: Miller Media
 Author URI: https://mattmiller.ai
@@ -9,7 +9,7 @@ Requires PHP: 8.1
 Tested up to: 6.9
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: import-files-from-server
+Text Domain: miller-media-server-file-import
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,10 +55,10 @@ if ( is_admin() ) {
 	add_filter(
 		'plugin_action_links_' . plugin_basename( __FILE__ ),
 		function ( $links ) {
-			$import_link   = '<a href="' . esc_url( admin_url( 'upload.php?page=import-files-from-server' ) ) . '">'
-				. esc_html__( 'Import Files', 'import-files-from-server' ) . '</a>';
+			$import_link   = '<a href="' . esc_url( admin_url( 'upload.php?page=miller-media-server-file-import' ) ) . '">'
+				. esc_html__( 'Import Files', 'miller-media-server-file-import' ) . '</a>';
 			$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=ifse-settings' ) ) . '">'
-				. esc_html__( 'Settings', 'import-files-from-server' ) . '</a>';
+				. esc_html__( 'Settings', 'miller-media-server-file-import' ) . '</a>';
 			array_unshift( $links, $import_link, $settings_link );
 			return $links;
 		}
@@ -67,10 +67,10 @@ if ( is_admin() ) {
 	new IFSE_Plugin();
 	new IFSE_Settings();
 	new IFSE_ReviewNotice(
-		'Import Files from Server',
-		'import-files-from-server',
+		'Miller Media Server File Import',
+		'miller-media-server-file-import',
 		'ifse_activated_on',
-		'import-files-from-server',
+		'miller-media-server-file-import',
 		'',
 		'dashicons-upload'
 	);

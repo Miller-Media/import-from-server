@@ -21,17 +21,17 @@ class IFSE_FileBrowser {
 
 		$real_root = realpath( $root_path );
 		if ( false === $real_root ) {
-			return new WP_Error( 'ifse_invalid_root', __( 'The configured root path does not exist.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_invalid_root', __( 'The configured root path does not exist.', 'miller-media-server-file-import' ) );
 		}
 
 		$real_path = realpath( $path );
 		if ( false === $real_path ) {
-			return new WP_Error( 'ifse_path_not_found', __( 'The requested path does not exist.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_path_not_found', __( 'The requested path does not exist.', 'miller-media-server-file-import' ) );
 		}
 
 		// Boundary check: the resolved path must start with the root.
 		if ( 0 !== strpos( $real_path, $real_root ) ) {
-			return new WP_Error( 'ifse_path_outside_root', __( 'Access denied: path is outside the allowed root directory.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_path_outside_root', __( 'Access denied: path is outside the allowed root directory.', 'miller-media-server-file-import' ) );
 		}
 
 		return $real_path;
@@ -45,11 +45,11 @@ class IFSE_FileBrowser {
 	 */
 	public static function listDirectory( $path ) {
 		if ( ! is_dir( $path ) ) {
-			return new WP_Error( 'ifse_not_directory', __( 'The requested path is not a directory.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_not_directory', __( 'The requested path is not a directory.', 'miller-media-server-file-import' ) );
 		}
 
 		if ( ! is_readable( $path ) ) {
-			return new WP_Error( 'ifse_not_readable', __( 'The directory is not readable.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_not_readable', __( 'The directory is not readable.', 'miller-media-server-file-import' ) );
 		}
 
 		$directories = array();
@@ -57,7 +57,7 @@ class IFSE_FileBrowser {
 		$entries     = scandir( $path );
 
 		if ( false === $entries ) {
-			return new WP_Error( 'ifse_scan_failed', __( 'Failed to read directory contents.', 'import-files-from-server' ) );
+			return new WP_Error( 'ifse_scan_failed', __( 'Failed to read directory contents.', 'miller-media-server-file-import' ) );
 		}
 
 		foreach ( $entries as $entry ) {
