@@ -47,14 +47,14 @@ class MMSFI_Plugin {
 
 		wp_enqueue_style(
 			'mmsfi-admin-css',
-			MMSFI_PLUGIN_URL . 'assets/css/admin.css',
+			MMSFI_PLUGIN_URL . 'dist/css/admin.css',
 			array(),
 			MMSFI_PLUGIN_VERSION
 		);
 
 		wp_enqueue_script(
 			'mmsfi-admin-js',
-			MMSFI_PLUGIN_URL . 'assets/js/admin.js',
+			MMSFI_PLUGIN_URL . 'dist/js/admin.js',
 			array( 'jquery', 'wp-api-request' ),
 			MMSFI_PLUGIN_VERSION,
 			true
