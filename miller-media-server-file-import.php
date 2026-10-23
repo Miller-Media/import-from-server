@@ -6,7 +6,7 @@ Author: Miller Media
 Author URI: https://mattmiller.ai
 Version: 1.0.0
 Requires PHP: 8.1
-Tested up to: 6.9
+Tested up to: 7.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: miller-media-server-file-import
