@@ -1,18 +1,16 @@
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&color=2271B1&center=true&vCenter=true&width=649&lines=Miller+Media+Server+File+Import" alt="Miller Media Server File Import" />
-</p>
+<h1 align="center">Miller Media Server File Import</h1>
 
 <p align="center">
 <pre align="center">
-             ___ ___ _____   _____ ___
-            / __| __| _ \ \ / / __| _ \
-            \__ \ _||   /\ V /| _||   /
-            |___/___|_|_\ \_/ |___|_|_\
+   ___ ___ _____   _____ ___
+  / __| __| _ \ \ / / __| _ \
+  \__ \ _||   /\ V /| _||   /
+  |___/___|_|_\ \_/ |___|_|_\
 &nbsp;
- ___ ___ _    ___   ___ __  __ ___  ___  ___ _____
-| __|_ _| |  | __| |_ _|  \/  | _ \/ _ \| _ \_   _|
-| _| | || |__| _|   | || |\/| |  _/ (_) |   / | |
-|_| |___|____|___| |___|_|  |_|_|  \___/|_|_\ |_|
+ ___ __  __ ___  ___  ___ _____
+|_ _|  \/  | _ \/ _ \| _ \_   _|
+ | || |\/| |  _/ (_) |   / | |
+|___|_|  |_|_|  \___/|_|_\ |_|
 </pre>
 </p>
 
@@ -31,10 +29,14 @@
 
 ---
 
-Browse files on the server and import them directly into the WordPress Media Library — no need to download and re-upload.
+Lets WordPress administrators browse files already on the server and import them directly into the Media Library, with no need to download and re-upload. Useful after an FTP/SFTP migration, or when a developer has placed assets on the server.
 
-Our plugin can be downloaded for free from the WordPress repository here:
-https://wordpress.org/plugins/miller-media-server-file-import/
+- AJAX file browser with breadcrumb navigation and bulk import
+- Duplicate detection, and copy or move for files outside the uploads directory
+- Configurable root directory and allowed file types
+- Capability checks and nonce protection on all endpoints
+
+Available for free on [WordPress.org](https://wordpress.org/plugins/miller-media-server-file-import/).
 
 Please help us gain visibility on this plugin by giving us a five-star rating on the WordPress plugin page here:
 https://wordpress.org/support/plugin/miller-media-server-file-import/reviews/#new-post
@@ -46,7 +48,7 @@ If you find this plugin useful, consider buying us a coffee:
 [![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/yOd1JU9MQe)
 
 # For developers contributing to this repository
-For those of you forking this repository, please submit any pull requests to the `develop` branch. `develop` acts as the stable pre-release branch of the plugin. When new versions are released, `develop` will be merged into `master` where the code will then be tagged with the release's version number.
+For those of you forking this repository, please submit any pull requests to the `main` branch.
 
 Also, thank you! We need developers like you to help us make this a great plugin for the whole WordPress community.
 
