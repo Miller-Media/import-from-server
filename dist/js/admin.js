@@ -1,9 +1,9 @@
-/* global jQuery, ifsData, wp */
+/* global jQuery, mmsfiData, wp */
 (function ($) {
 	'use strict';
 
 	var state = {
-		currentPath: ifsData.rootPath,
+		currentPath: mmsfiData.rootPath,
 		selectedFiles: [],
 		importing: false
 	};
@@ -52,7 +52,7 @@
 		updateSelectedCount();
 
 		if (!silent) {
-			$('#ifs-file-list').html('<p class="ifs-loading">' + ifsData.i18n.loading + '</p>');
+			$('#ifs-file-list').html('<p class="ifs-loading">' + mmsfiData.i18n.loading + '</p>');
 			$('#ifs-progress').hide();
 		}
 		$('#ifs-select-all').prop('checked', false);
@@ -70,7 +70,7 @@
 		}).fail(function (xhr) {
 			var msg = xhr.responseJSON && xhr.responseJSON.message
 				? xhr.responseJSON.message
-				: ifsData.i18n.errorLoading;
+				: mmsfiData.i18n.errorLoading;
 			$('#ifs-file-list').html('<p class="ifs-error">' + msg + '</p>');
 		});
 	}
@@ -99,7 +99,7 @@
 	 */
 	function renderFileList(directories, files) {
 		if (directories.length === 0 && files.length === 0) {
-			$('#ifs-file-list').html('<p class="ifs-empty">' + ifsData.i18n.noFiles + '</p>');
+			$('#ifs-file-list').html('<p class="ifs-empty">' + mmsfiData.i18n.noFiles + '</p>');
 			return;
 		}
 
@@ -133,9 +133,9 @@
 
 			if (file.imported) {
 				rowClass += ' ifs-row-imported';
-				statusHtml = '<span class="ifs-badge ifs-badge-imported">' + ifsData.i18n.alreadyImported + '</span>';
+				statusHtml = '<span class="ifs-badge ifs-badge-imported">' + mmsfiData.i18n.alreadyImported + '</span>';
 				if (file.edit_url) {
-					statusHtml += ' <a href="' + escAttr(file.edit_url) + '" class="ifs-view-link">' + ifsData.i18n.viewInLibrary + '</a>';
+					statusHtml += ' <a href="' + escAttr(file.edit_url) + '" class="ifs-view-link">' + mmsfiData.i18n.viewInLibrary + '</a>';
 				}
 			} else if (!file.importable) {
 				rowClass += ' ifs-row-not-importable';
@@ -175,7 +175,7 @@
 		}
 
 		state.importing = true;
-		$('#ifs-import-btn').prop('disabled', true).text(ifsData.i18n.importing);
+		$('#ifs-import-btn').prop('disabled', true).text(mmsfiData.i18n.importing);
 		$('#ifs-progress').show();
 		$('#ifs-import-log').empty();
 		$('#ifs-progress-text').text('0 / ' + state.selectedFiles.length);
@@ -198,7 +198,7 @@
 
 				if (r.success) {
 					$('#ifs-import-log').append(
-						'<div class="ifs-log-entry ifs-log-success">' + escHtml(r.file) + ' — ' + ifsData.i18n.imported + '</div>'
+						'<div class="ifs-log-entry ifs-log-success">' + escHtml(r.file) + ' — ' + mmsfiData.i18n.imported + '</div>'
 					);
 				} else {
 					$('#ifs-import-log').append(
@@ -207,9 +207,9 @@
 				}
 			}
 
-			$('#ifs-progress-text').text(ifsData.i18n.complete + ' (' + total + ' files)');
+			$('#ifs-progress-text').text(mmsfiData.i18n.complete + ' (' + total + ' files)');
 			state.importing = false;
-			$('#ifs-import-btn').text(ifsData.i18n.importSelected + ' (0)');
+			$('#ifs-import-btn').text(mmsfiData.i18n.importSelected + ' (0)');
 
 			// Refresh the file list silently so imported files show updated status,
 			// but keep the progress log visible so the user can review results.
@@ -218,12 +218,12 @@
 		}).fail(function (xhr) {
 			var msg = xhr.responseJSON && xhr.responseJSON.message
 				? xhr.responseJSON.message
-				: ifsData.i18n.failed;
+				: mmsfiData.i18n.failed;
 			$('#ifs-import-log').append(
 				'<div class="ifs-log-entry ifs-log-error">' + escHtml(msg) + '</div>'
 			);
 			state.importing = false;
-			$('#ifs-import-btn').prop('disabled', false).text(ifsData.i18n.importSelected + ' (' + state.selectedFiles.length + ')');
+			$('#ifs-import-btn').prop('disabled', false).text(mmsfiData.i18n.importSelected + ' (' + state.selectedFiles.length + ')');
 		});
 	}
 
@@ -251,7 +251,7 @@
 		}
 
 		// Initial load.
-		browse(ifsData.rootPath);
+		browse(mmsfiData.rootPath);
 
 		// Breadcrumb navigation.
 		$('#ifs-breadcrumbs').on('click', '.ifs-breadcrumb-link', function (e) {
