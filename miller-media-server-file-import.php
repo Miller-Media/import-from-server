@@ -4,7 +4,7 @@ Plugin Name: Miller Media Server File Import
 Description: Browse files on the server and import them into the WordPress Media Library.
 Author: Miller Media
 Author URI: https://mattmiller.ai
-Version: 1.0.0
+Version: 1.0.1
 Requires PHP: 8.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'MMSFI_PLUGIN_VERSION', '1.0.0' );
+define( 'MMSFI_PLUGIN_VERSION', '1.0.1' );
 define( 'MMSFI_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MMSFI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

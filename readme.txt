@@ -4,7 +4,7 @@ Tags: media, import, server, upload, files
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,11 +69,14 @@ Any user with the `upload_files` capability can browse and import files. Only ad
 
 == Screenshots ==
 
-1. File browser with directory listing and import controls
-2. Import progress with per-file status log
-3. Settings page
+1. The file browser under Media > Import Files from Server: breadcrumb navigation, directory listing and import controls.
+2. Import results, with a progress bar and a per-file status log.
+3. The settings page, with the root directory, import behavior and allowed file types.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix: file browser didn't load because the admin script read the wrong settings object.
 
 = 1.0.0 =
 * Initial release
